@@ -1,0 +1,95 @@
+npm install -g grunt-cli bower
+nom install -g bower
+above commands install grunt-cli and bower globally.
+no need to install for each project
+As always, before using a new generator, you must install it from npm first:
+
+
+npm install -g generator-angular
+
+
+yo angular dashboard
+
+saas no
+bootstrap yes
+using space angular-router.js remove
+
+
+open application open app/index.html see angular.js and bootstrap.js
+coy css and font from dist into app
+
+bower.json remove bootstrap
+
+in index.html 
+
+add - bootstarp.css
+
+bower install angular-bootstrap --save 
+
+2
+
+this is angular directive for bootstrap 
+
+bower install angular-ui-router --save
+
+npm install grunt --save
+
+remove application container div 
+and create custom nav
+
+<div ui-view></div>
+
+
+in script/app,js
+
+add 'ui.bootstrap', and 'ui.router'
+
+.config(function($stateProvider){
+$stateProvider 
+   . state("home", {
+	templateUrl:"view/home.html",
+	controller:"HomeCtrl",
+	url:"/home"
+   })
+
+.state("about", {
+
+})
+
+.state("contact", {
+
+  })
+  
+  .state("contact.india",{
+	templateUrl:"views/contact.india.html",
+	controller:ContactIndiaCtrl",
+	url:"/india"
+  })
+  
+  .state("contact.us",{
+	templateUrl:"views/contact.us.html",
+	controller:ContactUSCtrl",
+	url:"/us"
+  })
+})
+
+.run(function($state){
+   $state.go("home");
+})
+
+
+To create view files execute following command
+yo angular:view home
+yo angular:view about
+yo angular:view contact
+
+To add controller
+yo angular:controller Home
+yo angular:controller About
+yo angular:controller Contact
+
+To add urls to a tag
+
+add ui-sref="home"
+
+grunt serve
