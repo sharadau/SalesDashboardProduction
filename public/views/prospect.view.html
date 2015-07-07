@@ -112,13 +112,12 @@
       <tr><td width="50%"><b>Email Subject: </b></td><td ng-if="prospect._id == emailsForStage1[0].prospect_id && email1.stage == 1">{{emailsForStage1[0].subject}}</td></tr>
       <tr><td width="50%"><b>Message: </b></td><td></td></tr>
      </table><br/>
-      <span ng-if="auth.profile.prospectPrivilage.length > 0 && auth.profile.prospectPrivilage.indexOf('VIEW_INITIATION_EMAIL_IF_NOT_INVOLVED') != -1">
+     <!-- <span ng-if="auth.profile.prospectPrivilage.length > 0 && auth.profile.prospectPrivilage.indexOf('VIEW_INITIATION_EMAIL_IF_NOT_INVOLVED') != -1">-->
      <table  data-ng-repeat="email1 in emailsForStage1">
       <tr ng-if="prospect._id == email1.prospect_id && email1.stage == 1 && cycle.cycle_no == email1.cycle_no"><td width="50%" colspan="2"><b>Sent from {{email1.from}} on {{email1.send_date}}:</b></td></tr>
       <tr ng-if="prospect._id == email1.prospect_id && email1.stage == 1 && cycle.cycle_no == email1.cycle_no"><td width="50%">Subject: {{email1.subject}}</td><td></td></tr>
       <tr ng-if="prospect._id == email1.prospect_id && email1.stage == 1 && cycle.cycle_no == email1.cycle_no"><td width="50%"><textarea rows="3" cols="78" readonly="readonly">{{email1.contents}}</textarea></td><td></td></tr>
     </table>
-          </span>
    <!-- <accordion-group heading="{{email1.subject}}" ng-repeat="email1 in emailsForStage1">
       {{email1.contents}}
     </accordion-group>
@@ -252,7 +251,7 @@
               <tr>
                   <div class="panel-wrapper" ng-if="prospect.questionsDoc != ''">
                       <td colspan="2">
-                          <label class="control-label">Questions Document: </label>
+                          <label class="control-label">Upload Document: </label>
                       </td>
                       <td>
                           <a href='../uploads/{{prospect.questionsDoc}}' > {{prospect.questionsDoc}}</a>
@@ -263,7 +262,7 @@
               <tr>
                   <td colspan="2">
                       <button  class="btn btn-default" type="submit" ng-disabled="form.$invalid" >
-                          <span class="glyphicon glyphicon-thumbs-up"></span> Save Questions
+                          <span class="glyphicon glyphicon-thumbs-up"></span> Save
                       </button>
                   </td>
               </tr>
