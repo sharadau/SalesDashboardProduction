@@ -14,6 +14,7 @@ angular.module('dashboardApp')
     .controller('AuthCtrl', function ($scope, auth, $state, $stateParams, store, UsersService, PrivilegesService) {
         $scope.auth = auth;
         //check user privilages
+
         $scope.auth.profile.privilage = [];
         UsersService.getUserByEmailId($scope.auth.profile.name)
             .success (function (data) {

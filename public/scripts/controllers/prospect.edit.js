@@ -8,7 +8,7 @@
  * Controller of the dashboardApp
  */
 angular.module('dashboardApp')
-  .controller('ProspectEditCtrl', function ($scope, $state, $stateParams, ProspectService, Emails, auth, CyclesService) {
+  .controller('ProspectEditCtrl', function ($scope, $state, $stateParams, ProspectService, Emails, auth, CyclesService, participant) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -53,6 +53,12 @@ angular.module('dashboardApp')
               newProspect.state_id = 1;
           }
         ProspectService.addProspect(newProspect);
+
+          if($scope.auth.profile.userType == 'sales_person') {
+              //add participant
+              console.log("adding salesperson as participant");
+              participant.addSalesParticipant($scope.auth.profile.name, newProspect._id);
+          }
 
           //create cycle
           //var newCycle = {};
