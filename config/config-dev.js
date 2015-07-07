@@ -2,7 +2,8 @@
 module.exports = {
   //db: 'mongodb://localhost/dashboard',
     //db: 'mongodb://sharada:sharada@ds053251.mongolab.com:53251/dashboard', //for testing
-   db: 'mongodb://sharadaumarane:sharadaumarane@ds031962.mongolab.com:31962/dashboard',//for dev
+   //db: 'mongodb://sharadaumarane:sharadaumarane@ds031962.mongolab.com:31962/dashboard',//for dev
+   db: 'mongodb://sharadalonkar:sharadalonkar@ds045632.mongolab.com:45632/dashboard',//for dev
     //baseUrl:"http://localhost:3000",
    // baseUrl:"http://pure-crag-4108.herokuapp.com",
     presalesEmailId:"presalesuser@synerzip.com",
